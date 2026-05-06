@@ -11,6 +11,7 @@ const links = [
   { label: "Treatments", href: "/treatments" },
   { label: "Patient Stories", href: "/#stories" },
   { label: "Tariff", href: "/#tariff" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
