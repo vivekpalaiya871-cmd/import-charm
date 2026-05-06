@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import {
   ArrowLeft, Scissors, Baby, Stethoscope, HeartPulse, Activity, Bone, Syringe, Ear,
   ScanLine, Pill, FlaskConical, X, CheckCircle2, ShieldCheck,
