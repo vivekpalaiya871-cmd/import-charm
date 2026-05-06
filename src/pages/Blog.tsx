@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 
-type Post = { id: string; title: string; content: string; date: string };
+type Post = { id: string; title: string; content: string; date: string; image?: string };
 
 const STORAGE_KEY = "meeraji_blog_posts";
 const AUTH_KEY = "meeraji_blog_auth";
@@ -24,6 +24,7 @@ const Blog = () => {
   const [password, setPassword] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState<string>("");
 
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -63,12 +64,22 @@ const Blog = () => {
       title: title.trim(),
       content: content.trim(),
       date: new Date().toLocaleString(),
+      image: image || undefined,
     };
     savePosts([newPost, ...posts]);
     setTitle("");
     setContent("");
+    setImage("");
     setShowNew(false);
     toast({ title: "Post published" });
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => setImage(reader.result as string);
+    reader.readAsDataURL(file);
   };
 
   const handleDelete = (id: string) => {
@@ -126,6 +137,13 @@ const Blog = () => {
                 <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
               </div>
               <div>
+                <Label htmlFor="image">Cover Image</Label>
+                <Input id="image" type="file" accept="image/*" onChange={handleImageChange} />
+                {image && (
+                  <img src={image} alt="preview" className="mt-3 rounded-lg max-h-48 object-cover" />
+                )}
+              </div>
+              <div>
                 <Label htmlFor="content">Content</Label>
                 <Textarea id="content" rows={8} value={content} onChange={(e) => setContent(e.target.value)} required />
               </div>
@@ -140,6 +158,13 @@ const Blog = () => {
           ) : (
             posts.map((p) => (
               <Card key={p.id} className="p-6">
+                {p.image && (
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full max-h-80 object-cover rounded-lg mb-4"
+                  />
+                )}
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <h3 className="font-display text-2xl font-semibold text-primary">{p.title}</h3>
