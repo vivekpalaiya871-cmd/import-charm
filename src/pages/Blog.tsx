@@ -140,7 +140,7 @@ const Blog = () => {
                 <Label htmlFor="image">Cover Image</Label>
                 <Input id="image" type="file" accept="image/*" onChange={handleImageChange} />
                 {image && (
-                  <div className="mt-3 w-full aspect-[16/9] rounded-lg overflow-hidden bg-muted border border-border">
+                  <div className="mt-3 w-full aspect-[4/5] rounded-lg overflow-hidden bg-muted border border-border">
                     <img src={image} alt="preview" className="w-full h-full object-contain" />
                   </div>
                 )}
@@ -161,7 +161,7 @@ const Blog = () => {
             posts.map((p) => (
               <Card key={p.id} className="p-6">
                 {p.image && (
-                  <div className="w-full aspect-[16/9] rounded-lg overflow-hidden mb-4 bg-muted border border-border">
+                  <div className="w-full aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-muted border border-border">
                     <img
                       src={p.image}
                       alt={p.title}
