@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "@tanstack/react-router";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Departments } from "@/components/site/Departments";
