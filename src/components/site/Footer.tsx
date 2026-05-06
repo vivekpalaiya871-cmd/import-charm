@@ -1,5 +1,6 @@
 import { Logo } from "@/components/site/Logo";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => (
   <footer className="bg-background border-t border-border py-14">
@@ -36,6 +37,12 @@ export const Footer = () => (
             ))}
           </div>
           <div className="text-sm text-muted-foreground mt-4">meerajihospital@gmail.com<br />9643 740 400</div>
+          <Link
+            to="/blog"
+            className="inline-block mt-4 text-xs px-3 py-1.5 rounded-md border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Admin Login
+          </Link>
         </div>
       </div>
       <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
