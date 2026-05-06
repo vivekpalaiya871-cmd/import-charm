@@ -161,7 +161,7 @@ const Blog = () => {
             posts.map((p) => (
               <Card key={p.id} className="p-6">
                 {p.image && (
-                  <div className="w-full max-w-xs aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-muted border border-border mx-auto">
+                  <div className="w-full max-w-[180px] aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-muted border border-border mx-auto">
                     <img
                       src={p.image}
                       alt={p.title}
