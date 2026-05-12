@@ -56,10 +56,6 @@ export const Hero = () => (
             <div className="font-display text-4xl font-semibold text-primary tabular-nums">15K+</div>
             <div className="text-xs text-muted-foreground mt-1">Successful surgeries performed with care.</div>
           </div>
-          <div className="absolute -top-6 -right-6 bg-gradient-primary rounded-2xl p-5 shadow-3d-lg text-primary-foreground hidden md:block">
-            <div className="font-display text-3xl font-semibold tabular-nums">99.8%</div>
-            <div className="text-xs opacity-90 mt-1">Patient satisfaction</div>
-          </div>
         </div>
       </div>
     </div>
