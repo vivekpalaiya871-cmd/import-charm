@@ -88,6 +88,11 @@ const Blog = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Health Blog & Hospital Updates | Meeraji Hospital Delhi NCR"
+        description="Health tips, surgical insights and hospital updates from Meeraji Hospital — guidance on plastic surgery, maternity, trauma care and wellness from our specialists."
+        keywords="health blog Delhi, plastic surgery blog, hospital updates, Meeraji Hospital news"
+      />
       <Navbar />
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
