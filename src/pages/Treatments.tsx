@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2, Stethoscope, Calendar, Clock } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { SEO } from "@/components/SEO";
 import gynBefore from "@/assets/case-gyn-before.jpg";
 import gynAfter from "@/assets/case-gyn-after.jpg";
 import tummyTuck from "@/assets/case-tummy-tuck.jpeg";
@@ -230,6 +231,11 @@ const cases: Case[] = [
 
 const Treatments = () => (
   <main className="min-h-screen bg-background">
+    <SEO
+      title="Patient Treatments & Surgery Cases | Meeraji Hospital, Delhi NCR"
+      description="Real patient treatment cases at Meeraji Hospital — gynaecomastia correction, tummy tuck, facial trauma & nasal reconstruction, burn recovery, oral tumour removal and more by Dr. Gopal Gupta."
+      keywords="plastic surgery cases Delhi, gynecomastia surgery, tummy tuck Delhi, burn recovery, facial reconstruction, before after surgery Meeraji Hospital"
+    />
     <Navbar />
 
     <section className="relative pt-20 pb-16 bg-gradient-to-b from-muted/40 to-background overflow-hidden">

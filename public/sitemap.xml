@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://meerajihospital.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://meerajihospital.com/departments</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://meerajihospital.com/doctors</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://meerajihospital.com/treatments</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://meerajihospital.com/gallery</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meerajihospital.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meerajihospital.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

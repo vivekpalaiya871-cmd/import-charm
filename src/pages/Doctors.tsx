@@ -3,6 +3,7 @@ import { Award, GraduationCap, CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { SEO } from "@/components/SEO";
 import doctorOrtho from "@/assets/doctor-ortho.png";
 import doctorShashi from "@/assets/doctor-shashi.jpg";
 import doctorVijay from "@/assets/doctor-vijay.jpg";
@@ -113,6 +114,20 @@ const doctors: Doctor[] = [
 
 const Doctors = () => (
   <main className="min-h-screen bg-background">
+    <SEO
+      title="Best Doctors at Meeraji Hospital | Plastic Surgeon, Gynaecologist, Urologist Delhi NCR"
+      description="Meet the expert doctors of Meeraji Hospital — Dr. Gopal Gupta (Plastic & Reconstructive Surgeon), Dr. Poonam Agarwal (Gynaecologist), Dr. Vijay Singh (Urologist) and more specialists in Delhi NCR."
+      keywords="best plastic surgeon Delhi, Dr Gopal Gupta, Dr Poonam Agarwal gynaecologist, Dr Vijay Singh urologist, best doctors Delhi NCR, Meeraji Hospital doctors"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: [
+          { "@type": "Person", name: "Dr. Gopal Gupta", jobTitle: "Plastic & Reconstructive Surgeon" },
+          { "@type": "Person", name: "Dr. Poonam Agarwal", jobTitle: "Obstetrician & Gynaecologist" },
+          { "@type": "Person", name: "Dr. Vijay Singh", jobTitle: "Urologist" },
+        ],
+      }}
+    />
     <Navbar />
 
     {/* Header */}
