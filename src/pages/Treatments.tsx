@@ -9,6 +9,8 @@ import tummyTuck from "@/assets/case-tummy-tuck.jpeg";
 import noseTumor from "@/assets/case-nose-tumor.jpeg";
 import burnRecovery from "@/assets/case-burn-recovery.jpeg";
 import earRepair from "@/assets/case-ear-repair.jpeg";
+import faceReconstruction from "@/assets/case-face-reconstruction.jpeg";
+import oralTumor from "@/assets/case-oral-tumor.jpeg";
 
 type Case = {
   id: string;
@@ -166,6 +168,62 @@ const cases: Case[] = [
       "Near-invisible, well-hidden scar",
       "Patient able to wear earrings again",
       "Low recurrence with adjuvant therapy",
+    ],
+  },
+  {
+    id: "facial-trauma-reconstruction",
+    title: "Facial Trauma & Nasal Reconstruction",
+    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    speciality: "Reconstructive Facial Surgery",
+    duration: "~5 hours",
+    date: "Recent Case · 2026",
+    collage: faceReconstruction,
+    summaryEn:
+      "A female patient sustained severe facial trauma involving the nose, lips and surrounding soft tissue. Through meticulous staged reconstruction — soft-tissue repair, nasal framework restoration and scar refinement — facial symmetry, function and aesthetic appearance were beautifully restored.",
+    summaryHi:
+      "एक महिला रोगी को नाक, होंठ और चेहरे के मुलायम ऊतकों में गंभीर चोट लगी थी। चरणबद्ध पुनर्निर्माण — सॉफ्ट टिशू रिपेयर, नाक की संरचना की बहाली और निशान सुधार — के माध्यम से चेहरे की समरूपता, कार्यक्षमता और सुंदरता पूरी तरह बहाल की गई।",
+    procedure: [
+      "Emergency assessment & wound stabilization",
+      "Layered soft-tissue repair under GA",
+      "Nasal framework reconstruction",
+      "Lip & vermillion border alignment",
+      "Scar revision & dermabrasion",
+      "Long-term follow-up with photo review",
+    ],
+    outcome: [
+      "Restored facial symmetry & contour",
+      "Natural-looking nasal & lip appearance",
+      "Full functional recovery (breathing, speech, eating)",
+      "Minimal, well-healed scars",
+      "Significant boost in confidence",
+    ],
+  },
+  {
+    id: "oral-tongue-tumor-excision",
+    title: "Oral & Tongue Tumor Excision with Reconstruction",
+    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    speciality: "Onco-Reconstructive Surgery",
+    duration: "~6 hours",
+    date: "Recent Case · 2026",
+    collage: oralTumor,
+    summaryEn:
+      "A male patient presented with an oral cavity / tongue tumor along with a separate nasal lesion. Wide local excision with safe oncological margins was performed, followed by reconstruction using a forearm free flap and local flaps for the nose. The patient regained speech, swallowing and a natural facial appearance.",
+    summaryHi:
+      "एक पुरुष रोगी को मुँह/जीभ का ट्यूमर और नाक पर अलग घाव था। सुरक्षित कैंसर मार्जिन के साथ ट्यूमर निकाला गया और फोरआर्म फ्री फ्लैप तथा लोकल फ्लैप से पुनर्निर्माण किया गया। रोगी की बोलने, निगलने की क्षमता और चेहरे का प्राकृतिक रूप पुनः प्राप्त हुआ।",
+    procedure: [
+      "Biopsy, imaging & oncological staging",
+      "Wide excision of tongue / oral lesion",
+      "Forearm free flap harvest & microvascular anastomosis",
+      "Intra-oral reconstruction & suturing",
+      "Nasal lesion excision & local flap repair",
+      "Post-op ICU care, speech & swallow rehab",
+    ],
+    outcome: [
+      "Complete tumor clearance",
+      "Restored tongue volume & mobility",
+      "Functional speech & swallowing",
+      "Natural nasal contour preserved",
+      "Cancer-free on follow-up",
     ],
   },
 ];
