@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import doctorOrtho from "@/assets/doctor-ortho.png";
 import doctorShashi from "@/assets/doctor-shashi.jpg";
 import doctorVijay from "@/assets/doctor-vijay.jpg";
+import doctorPoonam from "@/assets/doctor-poonam.jpg";
 
 type Doctor = {
   id: string;
@@ -86,6 +87,26 @@ const doctors: Doctor[] = [
       "Minimally Invasive Urological Procedures",
       "Uro-Oncology",
       "Kidney Transplant Surgery",
+    ],
+  },
+  {
+    id: "poonam-agarwal",
+    name: "Dr. Poonam Agarwal",
+    qualification: "MBBS, MS (Obstetrics and Gynaecology)",
+    role: "Consultant",
+    speciality: "Obstetrics & Gynaecology",
+    image: doctorPoonam,
+    experience: "10+ years",
+    bio: "Dr. Poonam Agarwal is a dedicated Obstetrician & Gynaecologist with extensive experience in women's health, high-risk pregnancy care, and minimally invasive gynaecological surgeries. Trained in advanced laparoscopic and hysteroscopic procedures, she is known for her compassionate approach and personalised care for every patient.",
+    skills: [
+      "Normal & High-Risk Pregnancy Care",
+      "Painless / Caesarean Delivery",
+      "Laparoscopic & Hysteroscopic Surgeries",
+      "Infertility Evaluation & Treatment",
+      "PCOS / PCOD Management",
+      "Menstrual Disorders & Menopause Care",
+      "Hysterectomy (Open & Laparoscopic)",
+      "Family Planning & Contraception",
     ],
   },
 ];
