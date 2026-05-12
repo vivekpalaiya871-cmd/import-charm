@@ -32,7 +32,7 @@ const cases: Case[] = [
   {
     id: "bilateral-gynecomastia",
     title: "Bilateral Gynecomastia Correction",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Cosmetic & Reconstructive Surgery",
     duration: "~2 hours",
     date: "Recent Case · 2026",
@@ -61,7 +61,7 @@ const cases: Case[] = [
   {
     id: "abdominoplasty-tummy-tuck",
     title: "Abdominoplasty (Tummy Tuck) — Before & After",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Body Contouring Surgery",
     duration: "~3 hours",
     date: "Recent Case · 2026",
@@ -89,7 +89,7 @@ const cases: Case[] = [
   {
     id: "facial-tumor-excision",
     title: "Facial Tumor Excision & Reconstruction",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Onco-Reconstructive Surgery",
     duration: "~4 hours",
     date: "Recent Case · 2026",
@@ -117,7 +117,7 @@ const cases: Case[] = [
   {
     id: "post-burn-reconstruction",
     title: "Major Burn Injury — Recovery & Reconstruction",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Burns & Reconstructive Surgery",
     duration: "Multi-stage · 6+ months",
     date: "Long-term Case · 2025–26",
@@ -145,7 +145,7 @@ const cases: Case[] = [
   {
     id: "ear-lobe-keloid-repair",
     title: "Ear Lobe Keloid Excision & Repair",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Cosmetic Reconstructive Surgery",
     duration: "~45 minutes",
     date: "Day-care Case · 2026",
@@ -173,7 +173,7 @@ const cases: Case[] = [
   {
     id: "facial-trauma-reconstruction",
     title: "Facial Trauma & Nasal Reconstruction",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Reconstructive Facial Surgery",
     duration: "~5 hours",
     date: "Recent Case · 2026",
@@ -201,7 +201,7 @@ const cases: Case[] = [
   {
     id: "oral-tongue-tumor-excision",
     title: "Oral & Tongue Tumor Excision with Reconstruction",
-    surgeon: "Dr. Gopalji Gupta — Plastic Surgeon",
+    surgeon: "Dr. Gopal Gupta — Plastic Surgeon",
     speciality: "Onco-Reconstructive Surgery",
     duration: "~6 hours",
     date: "Recent Case · 2026",

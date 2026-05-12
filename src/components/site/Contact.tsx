@@ -44,7 +44,7 @@ export const Contact = () => (
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider opacity-70">Visit</div>
-                <div className="font-display text-xl">Meera Ji Hospital, Delhi NCR</div>
+                <div className="font-display text-xl">Meeraji Hospital-Multispeciality, Trauma and Maternity Centre, Delhi NCR</div>
               </div>
             </div>
             <div className="flex items-start gap-4">

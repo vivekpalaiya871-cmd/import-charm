@@ -26,7 +26,7 @@ export const Doctor = () => (
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-primary rounded-[2rem] opacity-20 blur-2xl" />
           <div className="relative aspect-[4/5] max-w-md rounded-[2rem] overflow-hidden shadow-elegant border-4 border-card">
-            <img src={doctorOrtho} alt="Dr. Orthopaedic Surgeon, Meera Ji Hospital" className="w-full h-full object-cover" loading="lazy" width={768} height={960} />
+            <img src={doctorOrtho} alt="Dr. Orthopaedic Surgeon, Meeraji Hospital-Multispeciality, Trauma and Maternity Centre" className="w-full h-full object-cover" loading="lazy" width={768} height={960} />
           </div>
           <div className="absolute -bottom-6 -right-2 md:right-12 bg-card rounded-2xl px-6 py-4 shadow-elegant border border-border">
             <div className="flex items-center gap-3">
@@ -45,7 +45,7 @@ export const Doctor = () => (
             Orthopaedic & Joint Replacement Surgeon
           </div>
           <h3 className="font-display text-3xl md:text-4xl text-ink mb-5 leading-tight">
-            Dr. Gopalji Gupta
+            Dr. Gopal Gupta
           </h3>
           <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
             Two decades of expertise in orthopaedics — from complex trauma fixation to total joint

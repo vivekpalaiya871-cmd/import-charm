@@ -23,13 +23,13 @@ type Doctor = {
 const doctors: Doctor[] = [
   {
     id: "gopalji-gupta",
-    name: "Dr. Gopalji Gupta",
+    name: "Dr. Gopal Gupta",
     qualification: "MBBS, MS, MCh (Plastic Surgery)",
-    role: "Founder & Owner — Meera Ji Hospital · Senior Consultant",
+    role: "Founder & Owner — Meeraji Hospital-Multispeciality, Trauma and Maternity Centre · Senior Consultant",
     speciality: "Cosmetic, Plastic, Aesthetic, Reconstructive Surgery & Burns",
     image: doctorOrtho,
     experience: "10+ years",
-    bio: "Dr. Gopalji Gupta is the founder and owner of Meera Ji Hospital. A board-certified Cosmetic & Plastic Surgeon with over 10 years of experience, he firmly believes in offering the best treatments and cosmetic procedures using the latest technology. He presently also serves as Senior Consultant in the Department of Plastic, Aesthetic, Reconstructive Surgery and Burns at Park Hospital, Gurugram.\n\nMedical Training:\n• MBBS — Chhatrapati Sahuji Maharaj Medical University (former KGMC), Lucknow, 2009\n• MS General Surgery — Banaras Hindu University, Varanasi, 2014\n• MCh Plastic Surgery — SMS Medical College & Hospital, Jaipur, 2019\n\nAffiliations: Association of Plastic Surgeons of India (APSI), Association of Surgeons of India (ASI), Delhi Medical Council.",
+    bio: "Dr. Gopal Gupta is the founder and owner of Meeraji Hospital-Multispeciality, Trauma and Maternity Centre. A board-certified Cosmetic & Plastic Surgeon with over 10 years of experience, he firmly believes in offering the best treatments and cosmetic procedures using the latest technology. He presently also serves as Senior Consultant in the Department of Plastic, Aesthetic, Reconstructive Surgery and Burns at Park Hospital, Gurugram.\n\nMedical Training:\n• MBBS — Chhatrapati Sahuji Maharaj Medical University (former KGMC), Lucknow, 2009\n• MS General Surgery — Banaras Hindu University, Varanasi, 2014\n• MCh Plastic Surgery — SMS Medical College & Hospital, Jaipur, 2019\n\nAffiliations: Association of Plastic Surgeons of India (APSI), Association of Surgeons of India (ASI), Delhi Medical Council.",
     skills: [
       "Reconstructive surgeries",
       "Burns management & post-burn reconstruction",
