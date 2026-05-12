@@ -93,7 +93,7 @@ const Blog = () => {
         <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
           <div>
             <h1 className="font-display text-3xl sm:text-5xl font-semibold text-primary">Blog</h1>
-            <p className="text-muted-foreground mt-2">Latest news and articles from Meera Ji Hospital</p>
+            <p className="text-muted-foreground mt-2">Latest news and articles from Meeraji Hospital-Multispeciality, Trauma and Maternity Centre</p>
           </div>
           <div className="flex gap-2">
             {isAuth ? (

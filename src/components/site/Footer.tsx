@@ -10,7 +10,7 @@ export const Footer = () => (
           <div className="flex items-center gap-3 mb-4">
             <Logo size={42} />
             <div>
-              <div className="font-display text-lg text-primary">Meera Ji Hospital</div>
+              <div className="font-display text-lg text-primary">Meeraji Hospital-Multispeciality, Trauma and Maternity Centre</div>
               <div className="text-xs text-muted-foreground">Compassion. Expertise. Healing.</div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
-        <div>© 2026 Meera Ji Hospital. All rights reserved.</div>
+        <div>© 2026 Meeraji Hospital-Multispeciality, Trauma and Maternity Centre. All rights reserved.</div>
         <div className="font-devanagari">सेवा परमो धर्मः</div>
       </div>
     </div>

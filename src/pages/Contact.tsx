@@ -27,7 +27,7 @@ const ContactPage = () => {
     e.preventDefault();
 
     const text =
-      `*New Appointment Request — Meera Ji Hospital*%0A%0A` +
+      `*New Appointment Request — Meeraji Hospital-Multispeciality, Trauma and Maternity Centre*%0A%0A` +
       `*Name:* ${form.name}%0A` +
       `*Phone:* ${form.phone}%0A` +
       `*Email:* ${form.email || "—"}%0A` +
@@ -39,7 +39,7 @@ const ContactPage = () => {
     window.open(waUrl, "_blank");
 
     // Open email (mailto)
-    const subject = encodeURIComponent("New Appointment Request — Meera Ji Hospital");
+    const subject = encodeURIComponent("New Appointment Request — Meeraji Hospital-Multispeciality, Trauma and Maternity Centre");
     const body = encodeURIComponent(
       `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nDepartment: ${form.department}\n\nMessage:\n${form.message}`
     );
@@ -115,7 +115,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Visit</div>
-                <div className="font-display text-xl text-ink">Meera Ji Hospital</div>
+                <div className="font-display text-xl text-ink">Meeraji Hospital-Multispeciality, Trauma and Maternity Centre</div>
                 <div className="text-sm text-muted-foreground">Multispeciality, Trauma & Maternity Centre · Delhi NCR</div>
               </div>
             </div>
@@ -172,7 +172,7 @@ const ContactPage = () => {
           </div>
           <div className="rounded-3xl overflow-hidden shadow-elegant border border-border">
             <iframe
-              title="Meera Ji Hospital Location"
+              title="Meeraji Hospital-Multispeciality, Trauma and Maternity Centre Location"
               src="https://www.google.com/maps?q=Meeraji+Hospital+Multispeciality+Trauma+and+Maternity+Centre&output=embed"
               width="100%"
               height="450"

@@ -9,7 +9,7 @@ type Props = {
 export const Logo = ({ className, size = 56 }: Props) => (
   <img
     src={logo}
-    alt="Meera Ji Hospital logo"
+    alt="Meeraji Hospital-Multispeciality, Trauma and Maternity Centre logo"
     width={size}
     height={size}
     style={{ width: size, height: size }}

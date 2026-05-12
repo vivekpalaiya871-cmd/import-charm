@@ -22,7 +22,7 @@ export const Tariff = () => (
       <div className="max-w-4xl mx-auto bg-card rounded-3xl shadow-soft border border-border overflow-hidden">
         <div className="bg-gradient-primary px-8 py-6 text-primary-foreground flex items-center justify-between">
           <div>
-            <div className="font-display text-2xl">Meera Ji Hospital</div>
+            <div className="font-display text-2xl">Meeraji Hospital-Multispeciality, Trauma and Maternity Centre</div>
             <div className="text-sm opacity-80">हस्पताल मूल्य सूची</div>
           </div>
           <div className="text-right text-sm opacity-90">

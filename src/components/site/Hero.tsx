@@ -26,7 +26,7 @@ export const Hero = () => (
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-8 sm:mb-10 leading-relaxed">
             A sanctuary of advanced multi-specialty care, renowned for plastic & reconstructive surgery led by{" "}
-            <span className="text-foreground font-medium">Dr. Gopalji Gupta</span>. From emergency to recovery — we walk every step with you.
+            <span className="text-foreground font-medium">Dr. Gopal Gupta</span>. From emergency to recovery — we walk every step with you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-12">
@@ -47,7 +47,7 @@ export const Hero = () => (
         <div className="lg:col-span-5 relative animate-fade-up" style={{ animationDelay: "150ms" }}>
           <div className="absolute -inset-4 bg-gradient-gold rounded-[2rem] blur-2xl opacity-40" />
           <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-3d-lg border border-primary/10 card-3d">
-            <img src={heroImg} alt="Meera Ji Hospital interior" className="w-full h-full object-cover" width={1280} height={1280} />
+            <img src={heroImg} alt="Meeraji Hospital-Multispeciality, Trauma and Maternity Centre interior" className="w-full h-full object-cover" width={1280} height={1280} />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
           </div>
 
@@ -55,10 +55,6 @@ export const Hero = () => (
           <div className="absolute -bottom-8 -left-8 bg-card rounded-2xl p-5 shadow-3d-lg border border-border max-w-[220px] hidden md:block animate-float">
             <div className="font-display text-4xl font-semibold text-primary tabular-nums">15K+</div>
             <div className="text-xs text-muted-foreground mt-1">Successful surgeries performed with care.</div>
-          </div>
-          <div className="absolute -top-6 -right-6 bg-gradient-primary rounded-2xl p-5 shadow-3d-lg text-primary-foreground hidden md:block">
-            <div className="font-display text-3xl font-semibold tabular-nums">99.8%</div>
-            <div className="text-xs opacity-90 mt-1">Patient satisfaction</div>
           </div>
         </div>
       </div>
