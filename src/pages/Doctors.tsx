@@ -3,6 +3,7 @@ import { Award, GraduationCap, CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { SEO } from "@/components/SEO";
 import doctorOrtho from "@/assets/doctor-ortho.png";
 import doctorShashi from "@/assets/doctor-shashi.jpg";
 import doctorVijay from "@/assets/doctor-vijay.jpg";
