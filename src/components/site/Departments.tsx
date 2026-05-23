@@ -1,7 +1,8 @@
 import {
   Stethoscope, Baby, HeartPulse, Activity, Scissors, Bone, Syringe, Ear,
-  ScanLine, Pill, X, CheckCircle2,
+  ScanLine, Pill, X, CheckCircle2, ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const specialities = [
   { icon: Scissors, en: "General & Laparoscopy Surgery", hi: "जनरल व लेपरोस्कोपिक सर्जरी" },
@@ -55,18 +56,25 @@ export const Departments = () => (
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {specialities.map(({ icon: Icon, en, hi }) => (
-            <div key={en} className="card-3d group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/30 shadow-3d hover:shadow-3d-lg">
+            <Link
+              to="/departments"
+              key={en}
+              className="card-3d group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/40 shadow-3d hover:shadow-3d-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-gold rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="flex items-start gap-4">
                 <div className="icon-3d w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
                   <Icon className="w-6 h-6" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="font-display text-lg text-ink leading-tight">{en}</h3>
                   <p className="font-devanagari text-sm text-muted-foreground mt-1">{hi}</p>
                 </div>
               </div>
-            </div>
+              <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                View Details <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

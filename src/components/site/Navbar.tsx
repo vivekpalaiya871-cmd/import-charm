@@ -1,19 +1,28 @@
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/site/Logo";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Departments", href: "/departments" },
+  { label: "Specialties", href: "/departments" },
   { label: "Doctors", href: "/doctors" },
   { label: "Treatments", href: "/treatments" },
   { label: "Patient Stories", href: "/#stories" },
+  { label: "Contact", href: "/contact" },
+];
+
+const moreLinks = [
   { label: "Tariff", href: "/#tariff" },
   { label: "Blog", href: "/blog" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -28,22 +37,34 @@ export const Navbar = () => {
           <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-muted-foreground truncate">Hospital · since 1998</div>
         </div>
       </Link>
-      <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+      <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
         {links.map((l) => (
           <a key={l.href} href={l.href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group">
             {l.label}
             <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-secondary group-hover:w-full transition-all duration-300" />
           </a>
         ))}
+        <DropdownMenu>
+          <DropdownMenuTrigger className="inline-flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors outline-none">
+            More <ChevronDown className="w-3.5 h-3.5" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="min-w-[10rem]">
+            {moreLinks.map((l) => (
+              <DropdownMenuItem key={l.href} asChild>
+                <a href={l.href} className="cursor-pointer">{l.label}</a>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </nav>
       <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-        <a href="tel:9643740400" className="hidden md:flex items-center gap-2 text-sm font-medium text-primary">
-          <Phone className="w-4 h-4" /> 9643 740 400
-        </a>
+        <Button variant="emergency" size="default" asChild className="hidden md:inline-flex">
+          <a href="tel:9643740400" aria-label="Emergency call"><Phone className="w-4 h-4" /> Emergency Call</a>
+        </Button>
         <a
           href="tel:9643740400"
           aria-label="Call hospital"
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-3d"
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-secondary-foreground shadow-3d-gold"
         >
           <Phone className="w-4 h-4" />
         </a>
@@ -63,7 +84,7 @@ export const Navbar = () => {
     {open && (
       <div className="lg:hidden border-t border-border/50 bg-background/95 backdrop-blur-md max-h-[calc(100vh-4rem)] overflow-y-auto">
         <nav className="container mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
-          {links.map((l) => (
+          {[...links, ...moreLinks].map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -77,12 +98,9 @@ export const Navbar = () => {
             <Button variant="hero" size="default" asChild className="w-full sm:w-auto">
               <Link to="/contact" onClick={() => setOpen(false)}>Book Appointment</Link>
             </Button>
-            <a
-              href="tel:9643740400"
-              className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md border border-primary/30 text-primary font-medium"
-            >
-              <Phone className="w-4 h-4" /> 9643 740 400
-            </a>
+            <Button variant="emergency" size="default" asChild className="w-full sm:w-auto">
+              <a href="tel:9643740400"><Phone className="w-4 h-4" /> Emergency Call</a>
+            </Button>
           </div>
         </nav>
       </div>
