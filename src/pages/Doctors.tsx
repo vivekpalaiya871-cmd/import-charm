@@ -8,6 +8,8 @@ import doctorOrtho from "@/assets/doctor-ortho.png";
 import doctorShashi from "@/assets/doctor-shashi.jpg";
 import doctorVijay from "@/assets/doctor-vijay.jpg";
 import doctorPoonam from "@/assets/doctor-poonam.jpg";
+import doctorVineet from "@/assets/doctor-vineet.jpg";
+import doctorSoumya from "@/assets/doctor-soumya.jpg";
 
 type Doctor = {
   id: string;
@@ -108,6 +110,48 @@ const doctors: Doctor[] = [
       "Menstrual Disorders & Menopause Care",
       "Hysterectomy (Open & Laparoscopic)",
       "Family Planning & Contraception",
+    ],
+  },
+  {
+    id: "vineet-kaul",
+    name: "Dr. Vineet Kaul",
+    qualification: "MBBS, MS (ENT), IFHNOS (New York)",
+    role: "Consultant — Head and Neck Surgical Oncology",
+    speciality: "Head & Neck Surgical Oncology / ENT",
+    image: doctorVineet,
+    experience: "Gurugram based specialist",
+    bio: "Dr. Vineet Kaul is a highly specialized Head and Neck Surgical Oncologist and ENT Surgeon based in Gurugram. With advanced fellowship training from the International Federation of Head and Neck Oncologic Societies (IFHNOS), New York, he specializes in the surgical management of benign and malignant tumors of the head and neck region. He is recognized for his expertise in precision-driven procedures, including robotic surgery and complex microvascular reconstructions, ensuring both oncological safety and functional recovery for his patients.\n\nEducation & Fellowships:\n• Global Fellowship in Head & Neck Surgery and Oncology — IFHNOS, New York\n• Master of Surgery (M.S.) in ENT\n• Bachelor of Medicine, Bachelor of Surgery (M.B.B.S.)\n\nAwards:\n• Faculty Award (2024) — Foundation for Head and Neck Oncology (FHNO)\n• Faculty Award (2024) — Association of Otorhinolaryngologists of India (AOI), Gurugram\n\nPhilosophy of Care: \"My approach combines surgical precision with an empathetic understanding of the patient's journey. By utilizing advanced technology like robotics and microvascular reconstruction, the goal is not just to treat the disease, but to ensure the highest possible quality of life post-surgery.\"",
+    skills: [
+      "Thyroid & Parathyroid Surgery — nodules, goiters & cancers (minimally invasive)",
+      "Robotic Head & Neck Surgery using Da Vinci Robotic System",
+      "Oral & Laryngeal Cancers — tongue, mouth & voice box",
+      "Microvascular Reconstruction (speech & swallowing restoration)",
+      "Salivary Gland Surgery — parotid & submandibular (nerve-sparing)",
+      "Scarless, high-precision tumor resections",
+    ],
+  },
+  {
+    id: "soumya-mohapatra",
+    name: "Dr. Soumya Shrikanta Mohapatra",
+    qualification: "MBBS, MS Orthopaedics",
+    role: "Consultant Orthopaedic Surgeon",
+    speciality: "Orthopaedics, Joint Replacement & Ilizarov Deformity Correction",
+    image: doctorSoumya,
+    experience: "Fellowship-trained Orthopaedic Surgeon",
+    bio: "Dr. Soumya Shrikanta Mohapatra is a highly trained Orthopaedic Surgeon with multiple international and national fellowships in trauma, Ilizarov deformity correction, joint replacement and arthroscopy. He is known for his expertise in complex limb reconstruction, paediatric deformity correction and advanced joint replacement surgeries.\n\nEducation:\n• MBBS & Internship — Madras Medical College, Chennai (2011)\n• MS Orthopaedics — Sawai Man Singh Medical College, Jaipur (2016)\n• Fellowship in Trauma, Ilizarov & Deformity Correction — Palakkad (2017–18)\n• Fellowship in Arthritis and Joint Replacement — Mumbai (2018–19)\n• Fellowship in Primary and Revision Arthroplasty and Arthroscopy — Adelaide, Australia (2019)",
+    skills: [
+      "Simple and Complex fracture fixation",
+      "Hip, Knee and Shoulder Joint Replacement Surgeries",
+      "Deformity Correction Surgeries",
+      "Congenital & Post-traumatic deformities of Lower Limb",
+      "CTEV foot correction, bowlegs & knock knees treatment",
+      "High tibial osteotomy",
+      "Poliotic limb treatment by Ilizarov methods",
+      "Deformity Correction using advanced Computerized Ortho-SUV",
+      "Limb lengthening surgeries",
+      "Paediatric deformity surgeries",
+      "Treatment of osteo-myelitis and infected non-union by Ilizarov techniques",
+      "Knee Arthroscopy & Ligament Reconstruction Surgeries",
     ],
   },
 ];
