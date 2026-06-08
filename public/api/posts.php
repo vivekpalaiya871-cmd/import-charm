@@ -2,11 +2,13 @@
 require_once 'config.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
+$FILE = 'posts.json';
 
 try {
     if ($method === 'GET') {
-        $stmt = $pdo->query("SELECT * FROM blog_posts ORDER BY created_at DESC");
-        echo json_encode($stmt->fetchAll());
+        $posts = readData($FILE);
+        usort($posts, fn($a, $b) => strcmp($b['created_at'] ?? '', $a['created_at'] ?? ''));
+        echo json_encode($posts);
 
     } elseif ($method === 'POST') {
         requireAdmin();
@@ -24,26 +26,37 @@ try {
 
         $imageUrl = $image ? saveUploadedImage($image) : null;
 
-        $stmt = $pdo->prepare("INSERT INTO blog_posts (title, content, image_url, author) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$title, $content, $imageUrl, $author]);
-
-        echo json_encode(['success' => true, 'id' => $pdo->lastInsertId()]);
+        $posts = readData($FILE);
+        $newPost = [
+            'id'         => uniqid('post_', true),
+            'title'      => $title,
+            'content'    => $content,
+            'image_url'  => $imageUrl,
+            'author'     => $author,
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+        array_unshift($posts, $newPost);
+        writeData($FILE, $posts);
+        echo json_encode(['success' => true, 'post' => $newPost]);
 
     } elseif ($method === 'DELETE') {
         requireAdmin();
         $id = $_GET['id'] ?? null;
         if (!$id) { http_response_code(400); echo json_encode(['error' => 'ID required']); exit; }
 
-        $stmt = $pdo->prepare("SELECT image_url FROM blog_posts WHERE id = ?");
-        $stmt->execute([$id]);
-        $row = $stmt->fetch();
-        if ($row && $row['image_url'] && strpos($row['image_url'], UPLOAD_URL) === 0) {
-            $file = UPLOAD_DIR . basename($row['image_url']);
-            if (file_exists($file)) @unlink($file);
+        $posts = readData($FILE);
+        $kept = [];
+        foreach ($posts as $p) {
+            if (($p['id'] ?? '') == $id) {
+                if (!empty($p['image_url']) && strpos($p['image_url'], UPLOAD_URL) === 0) {
+                    $file = UPLOAD_DIR . basename($p['image_url']);
+                    if (file_exists($file)) @unlink($file);
+                }
+            } else {
+                $kept[] = $p;
+            }
         }
-
-        $stmt = $pdo->prepare("DELETE FROM blog_posts WHERE id = ?");
-        $stmt->execute([$id]);
+        writeData($FILE, $kept);
         echo json_encode(['success' => true]);
 
     } else {
