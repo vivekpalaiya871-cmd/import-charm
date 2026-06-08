@@ -1,13 +1,9 @@
 <?php
 // ============================================
-// GoDaddy MySQL Database Configuration
+// FILE-BASED STORAGE (No database required!)
 // ============================================
-// IMPORTANT: Update these 4 values from your GoDaddy cPanel → MySQL Databases
-
-define('DB_HOST', 'localhost');           // Usually 'localhost' on GoDaddy
-define('DB_NAME', 'your_db_name');        // e.g. abc1234_meeraji_db
-define('DB_USER', 'your_db_user');        // e.g. abc1234_admin
-define('DB_PASS', 'your_db_password');    // The password you set
+// Posts & gallery saved as JSON files in /api/data/
+// Images saved in /api/uploads/
 
 // Admin login credentials (change these!)
 define('ADMIN_USER', 'admin');
@@ -25,23 +21,6 @@ header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
-    exit;
-}
-
-// PDO connection
-try {
-    $pdo = new PDO(
-        "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
-        DB_USER,
-        DB_PASS,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
-    );
-} catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Database connection failed', 'message' => $e->getMessage()]);
     exit;
 }
 
@@ -67,9 +46,35 @@ function jsonInput() {
 // Upload base URL (relative to /api/)
 define('UPLOAD_DIR', __DIR__ . '/uploads/');
 define('UPLOAD_URL', '/api/uploads/');
+define('DATA_DIR', __DIR__ . '/data/');
 
 if (!is_dir(UPLOAD_DIR)) {
     mkdir(UPLOAD_DIR, 0755, true);
+}
+if (!is_dir(DATA_DIR)) {
+    mkdir(DATA_DIR, 0755, true);
+}
+
+function readData($file) {
+    $path = DATA_DIR . $file;
+    if (!file_exists($path)) return [];
+    $raw = file_get_contents($path);
+    $arr = json_decode($raw, true);
+    return is_array($arr) ? $arr : [];
+}
+
+function writeData($file, $data) {
+    $path = DATA_DIR . $file;
+    $fp = fopen($path, 'c+');
+    if (!$fp) return false;
+    flock($fp, LOCK_EX);
+    ftruncate($fp, 0);
+    rewind($fp);
+    fwrite($fp, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+    fflush($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    return true;
 }
 
 function saveUploadedImage($base64OrFile) {
