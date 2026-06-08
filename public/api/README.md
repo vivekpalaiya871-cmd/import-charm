@@ -1,7 +1,21 @@
-# Meeraji Hospital - PHP Backend Setup (GoDaddy)
+# Meeraji Hospital — PHP Backend (NO DATABASE!)
 
-## Step 1: Upload files
-Upload the entire `api/` folder to your GoDaddy `public_html/` directory.
+File-based storage. Koi MySQL nahi chahiye. Sab kuch JSON files + uploads folder me save hota hai.
+
+## GoDaddy Upload Steps
+
+1. **Build React app** locally → `npm run build` (dist/ folder banega)
+2. **Upload to GoDaddy** `public_html/`:
+   - `dist/` ke andar ki saari files → `public_html/`
+   - Pura `public/api/` folder → `public_html/api/`
+3. **Permissions** (cPanel File Manager → Right-click → Permissions):
+   - `public_html/api/uploads/` → **755**
+   - `public_html/api/data/` → **755**
+   - `data/posts.json`, `data/gallery.json` → **644**
+4. **Admin login**: `admin` / `meeraji@2026`
+   (badalne ke liye `api/config.php` me `ADMIN_USER` / `ADMIN_PASS` edit karo)
+
+## Folder Structure on Server
 
 ```
 public_html/
@@ -12,45 +26,20 @@ public_html/
     ├── login.php
     ├── posts.php
     ├── gallery.php
-    ├── install.sql
-    ├── .htaccess
-    └── uploads/   (chmod 755)
+    ├── data/        (JSON storage — web access blocked)
+    │   ├── posts.json
+    │   └── gallery.json
+    └── uploads/     (uploaded images)
 ```
 
-## Step 2: Create MySQL Database
-1. GoDaddy cPanel → **MySQL Databases**
-2. Create database (e.g. `abc1234_meeraji`)
-3. Create user + password, add user with **All Privileges**
+## API
 
-## Step 3: Import schema
-cPanel → **phpMyAdmin** → your database → **SQL** tab → paste `install.sql` → Go
+- `GET/POST/DELETE /api/posts.php`
+- `GET/POST/DELETE /api/gallery.php`
+- `POST/DELETE/GET /api/login.php`
 
-## Step 4: Edit `config.php`
-Update these 4 lines:
-```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'abc1234_meeraji');
-define('DB_USER', 'abc1234_admin');
-define('DB_PASS', 'YourPassword');
+## Test Locally
+
+```bash
+cd public/api && php -S localhost:8000
 ```
-Also change `ADMIN_USER` / `ADMIN_PASS`.
-
-## Step 5: Permissions
-Set `api/uploads/` to **755** via File Manager.
-
-## Step 6: Test
-Open `https://yoursite.com/api/posts.php` — should return `[]`.
-
-## API Endpoints
-| Endpoint | Method | Auth | Body |
-|---|---|---|---|
-| `/api/login.php` | POST | - | `{username, password}` |
-| `/api/login.php` | DELETE | - | logout |
-| `/api/posts.php` | GET | - | list |
-| `/api/posts.php` | POST | Admin | `{title, content, image, author}` |
-| `/api/posts.php?id=X` | DELETE | Admin | - |
-| `/api/gallery.php` | GET | - | list |
-| `/api/gallery.php` | POST | Admin | `{image, caption, category}` |
-| `/api/gallery.php?id=X` | DELETE | Admin | - |
-
-Images = base64 data URL (`data:image/jpeg;base64,...`).

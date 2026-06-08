@@ -2,11 +2,13 @@
 require_once 'config.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
+$FILE = 'gallery.json';
 
 try {
     if ($method === 'GET') {
-        $stmt = $pdo->query("SELECT * FROM gallery_photos ORDER BY created_at DESC");
-        echo json_encode($stmt->fetchAll());
+        $photos = readData($FILE);
+        usort($photos, fn($a, $b) => strcmp($b['created_at'] ?? '', $a['created_at'] ?? ''));
+        echo json_encode($photos);
 
     } elseif ($method === 'POST') {
         requireAdmin();
@@ -23,26 +25,36 @@ try {
 
         $imageUrl = saveUploadedImage($image);
 
-        $stmt = $pdo->prepare("INSERT INTO gallery_photos (image_url, caption, category) VALUES (?, ?, ?)");
-        $stmt->execute([$imageUrl, $caption, $category]);
-
-        echo json_encode(['success' => true, 'id' => $pdo->lastInsertId()]);
+        $photos = readData($FILE);
+        $newPhoto = [
+            'id'         => uniqid('pic_', true),
+            'image_url'  => $imageUrl,
+            'caption'    => $caption,
+            'category'   => $category,
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+        array_unshift($photos, $newPhoto);
+        writeData($FILE, $photos);
+        echo json_encode(['success' => true, 'photo' => $newPhoto]);
 
     } elseif ($method === 'DELETE') {
         requireAdmin();
         $id = $_GET['id'] ?? null;
         if (!$id) { http_response_code(400); echo json_encode(['error' => 'ID required']); exit; }
 
-        $stmt = $pdo->prepare("SELECT image_url FROM gallery_photos WHERE id = ?");
-        $stmt->execute([$id]);
-        $row = $stmt->fetch();
-        if ($row && $row['image_url'] && strpos($row['image_url'], UPLOAD_URL) === 0) {
-            $file = UPLOAD_DIR . basename($row['image_url']);
-            if (file_exists($file)) @unlink($file);
+        $photos = readData($FILE);
+        $kept = [];
+        foreach ($photos as $p) {
+            if (($p['id'] ?? '') == $id) {
+                if (!empty($p['image_url']) && strpos($p['image_url'], UPLOAD_URL) === 0) {
+                    $file = UPLOAD_DIR . basename($p['image_url']);
+                    if (file_exists($file)) @unlink($file);
+                }
+            } else {
+                $kept[] = $p;
+            }
         }
-
-        $stmt = $pdo->prepare("DELETE FROM gallery_photos WHERE id = ?");
-        $stmt->execute([$id]);
+        writeData($FILE, $kept);
         echo json_encode(['success' => true]);
 
     } else {
